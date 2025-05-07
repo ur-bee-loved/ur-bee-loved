@@ -21,6 +21,6 @@ Welcome to my GIT profile, be my guest and explore the inner chambers of my code
 
 <!-- WEATHER-END -->
 ## git stats 
-[![bee's GitHub stats](https://github-readme-stats.vercel.app/api?username=ur_bee_loved)](https://github.com/ur_bee_loved/github-readme-stats)
+[![bee's GitHub stats](https://github-readme-stats.vercel.app/api?username=ur-bee-loved)](https://github.com/ur-bee-loved/github-readme-stats)
 ## 📫 Contact Me
 blablabla
