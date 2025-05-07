@@ -7,6 +7,7 @@ import math
 ##import numpy as np
 from dotenv import load_dotenv
 load_dotenv()
+import re 
 
 ##Define as configurações da API
    ##Estudar fazer um .env com a chave da API visando escalonamento e segurança.
@@ -188,20 +189,38 @@ def update_readme():
     cursor.execute('SELECT * FROM weather ORDER BY id DESC LIMIT 1')
     row = cursor.fetchone()
 
-    if row:
-        city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
+    if not row:
+        return
 
-        with open("README.md", "w", encoding="utf-8") as f:
-            f.write(f"""\
-### ☁️ 🌤️  The weather in {city} is:
+    city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
+
+    # Read the full README
+    with open("README.md", "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # New weather block
+    weather_block = f"""\
+### ☁️ Weather in {city}
 
 - Temperature: {temp}°C
-- On flesh: {feels_like}°C
-- Relative air humidity: {humidity}%
+- Feels like: {feels_like}°C
+- Humidity: {humidity}%
 - Rain: {rain} mm
 - Description: {description.capitalize()}
-- last updated: {timestamp}
-""")
+- Last updated: {timestamp}
+"""
+
+    # Replace the section
+    new_content = re.sub(
+        r"<!-- WEATHER-START -->(.*?)<!-- WEATHER-END -->",
+        f"<!-- WEATHER-START -->\n{weather_block}\n<!-- WEATHER-END -->",
+        content,
+        flags=re.DOTALL
+    )
+
+    # Write back to README
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(new_content)
 
 # bota pa fude
 def main():
