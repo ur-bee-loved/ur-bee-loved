@@ -1,8 +1,14 @@
-### ☁️ 🌤️  The weather in Florianópolis is:
+# test teste teste teste teste teste teste 
 
-- Temperature: 22.01°C
-- On flesh: 22.77°C
-- Relative air humidity: 96%
-- Rain: 0.0 mm
-- Description: Few clouds
-- last updated: 2025-05-07T23:23:38.969383
+<div align="center">
+  <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
+  <!-- other icons -->
+</div>
+
+## 📡 Weather Update
+<!-- WEATHER-START -->
+This section will be replaced automatically.
+<!-- WEATHER-END -->
+
+## 📫 Contact Me
+blablabla
