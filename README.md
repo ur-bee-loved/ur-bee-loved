@@ -1,11 +1,14 @@
-# test teste teste teste teste teste teste 
+Howdy, partner! 
+Welcome to my GIT profile, be my guest and explore the inner chambers of my codes.
 
 <div align="center">
   <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
-  <!-- other icons -->
+  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="Rafa-Csharp" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
 </div>
 
-## 📡 Weather Update
+## 📡 My location's weather. Updates every hour ;)
 <!-- WEATHER-START -->
 ### ☁️ Weather in Florianópolis
 
