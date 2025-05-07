@@ -193,7 +193,7 @@ def update_readme():
 
         with open("README.md", "w", encoding="utf-8") as f:
             f.write(f"""\
-### ☁️ 🌤️  The weather in {city} is: {city}
+### ☁️ 🌤️  The weather in {city} is:
 
 - Temperature: {temp}°C
 - On flesh: {feels_like}°C
