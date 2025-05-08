@@ -1,12 +1,7 @@
 Howdy, partner! 
 Welcome to my GIT profile, be my guest and explore the inner chambers of my codes.
+Name's Bianca, it's my pleasure to have you here. 
 
-<div align="center">
-  <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
-  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Rafa-Csharp" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
-</div>
 
 ## 📡 My location's weather. Updates every hour ;)
 <!-- WEATHER-START -->
@@ -23,8 +18,15 @@ Welcome to my GIT profile, be my guest and explore the inner chambers of my code
 ## git stats 
 ![bee's GitHub stats](https://github-readme-stats.vercel.app/api?username=ur-bee-loved&show_icons=true&theme=synthwave&hide_rank=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ur-bee-loved&layout=compact)
+<div align="center">
+  <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
+  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="Rafa-Csharp" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
 </div>
+
 ## 📫 Find me @:
 
 <a href = "mailto:bianca.ruschel.echart@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="www.linkedin.com/in/bernardo-ruschel-echart-37362a2ab" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
