@@ -8,10 +8,11 @@ Name's Bianca, it's my pleasure to have you here.
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ur-bee-loved&layout=compact)
 <div align="right">
   <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
-  <img align="right" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="right" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="right" alt="Rafa-Csharp" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
+  <img align="right" alt="Rafa-Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="right" alt="Rafa-HTML" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="right" alt="Rafa-Csharp" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
 </div>
+
 
 ## 📡 My location's weather. Updates every hour ;)
 <!-- WEATHER-START -->
