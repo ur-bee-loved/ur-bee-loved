@@ -6,9 +6,9 @@ Name's Bianca, it's my pleasure to have you here.
 ## git stats 
 <div align="center">
   <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="130" />
-  <img align="right" alt="bee-Js" height="120" width="130" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="right" alt="bee-HTML" height="120" width="130" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="right" alt="bee-Csharp" height="120" width="130" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
+  <img align="right" alt="bee-Js" height="50" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="right" alt="bee-HTML" height="50" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="right" alt="bee-Csharp" height="50" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
 </div>
 
 ![bee's GitHub stats](https://github-readme-stats.vercel.app/api?username=ur-bee-loved&show_icons=true&theme=synthwave&hide_rank=true)
