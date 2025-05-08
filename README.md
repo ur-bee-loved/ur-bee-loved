@@ -4,7 +4,7 @@ Welcome to my GIT profile, be my guest and explore the inner chambers of my code
 Name's Bee, it's my pleasure to have you here. 
 
 ## git stats 
-<div align="center">
+<div align="center" height="50">
   <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" height="50" width="60" />
   <img align="right" alt="bee-Js" height="50" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="right" alt="bee-HTML" height="50" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
