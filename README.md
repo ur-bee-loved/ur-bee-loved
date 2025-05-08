@@ -5,10 +5,10 @@ Name's Bianca, it's my pleasure to have you here.
 
 ## git stats 
 <div align="center">
-  <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
-  <img align="right" alt="Rafa-Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="right" alt="Rafa-HTML" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="right" alt="Rafa-Csharp" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
+  <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="60" />
+  <img align="right" alt="bee-Js" height="60" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="right" alt="bee-HTML" height="60" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="right" alt="bee-Csharp" height="60" width="70" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
 </div>
 
 ![bee's GitHub stats](https://github-readme-stats.vercel.app/api?username=ur-bee-loved&show_icons=true&theme=synthwave&hide_rank=true)
