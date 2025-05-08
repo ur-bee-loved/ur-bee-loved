@@ -25,5 +25,6 @@ Welcome to my GIT profile, be my guest and explore the inner chambers of my code
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ur-bee-loved&layout=compact)
 </div>
 ## 📫 Find me @:
+
 <a href = "mailto:bianca.ruschel.echart@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 
