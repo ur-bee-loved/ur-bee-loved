@@ -4,7 +4,7 @@ Welcome to my GIT profile, be my guest and explore the inner chambers of my code
 Name's Bianca, it's my pleasure to have you here. 
 
 ## git stats 
-<div align="right">
+<div align="center">
   <img align="right" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30" />
   <img align="right" alt="Rafa-Js" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="right" alt="Rafa-HTML" height="40" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
