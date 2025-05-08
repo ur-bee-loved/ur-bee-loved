@@ -1,7 +1,7 @@
 Howdy, partner! 
 Welcome to my GIT profile, be my guest and explore the inner chambers of my codes.
 
-Name's Bianca, it's my pleasure to have you here. 
+Name's Bee, it's my pleasure to have you here. 
 
 ## git stats 
 <div align="center">
