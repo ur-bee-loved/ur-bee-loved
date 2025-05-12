@@ -20,12 +20,12 @@ Name's Bee, it's my pleasure to have you here.
 <!-- WEATHER-START -->
 ### ☁️ Weather in Florianópolis
 
-- Temperature: 19.79°C
-- Feels like: 19.76°C
-- Humidity: 74%
+- Temperature: 18.68°C
+- Feels like: 18.51°C
+- Humidity: 73%
 - Rain: 0.0 mm
 - Description: Clear sky
-- Last updated: 2025-05-12T20:27:56.603920
+- Last updated: 2025-05-12T21:23:12.304810
 
 <!-- WEATHER-END -->
 
