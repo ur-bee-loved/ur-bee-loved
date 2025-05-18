@@ -18,14 +18,14 @@ Name's Bee, it's my pleasure to have you here.
 
 ## 📡 My location's weather. Updates every hour ;)
 <!-- WEATHER-START -->
-### ☁️ Weather in Florianópolis
+### ☁️ Weather in Guimarães
 
-- Temperature: 23.68°C
-- Feels like: 23.83°C
-- Humidity: 66%
+- Temperature: 17.29°C
+- Feels like: 17.09°C
+- Humidity: 77%
 - Rain: 0.0 mm
-- Description: Clear sky
-- Last updated: 2025-05-18T16:28:10.896666
+- Description: Overcast clouds
+- Last updated: 2025-05-18T17:19:39.008806
 
 <!-- WEATHER-END -->
 
