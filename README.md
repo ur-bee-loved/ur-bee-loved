@@ -20,12 +20,12 @@ Name's Bee, it's my pleasure to have you here.
 <!-- WEATHER-START -->
 ### ☁️ Weather in Guimarães
 
-- Temperature: 26.18°C
-- Feels like: 26.18°C
+- Temperature: 25.62°C
+- Feels like: 25.44°C
 - Humidity: 46%
 - Rain: 0.0 mm
-- Description: Broken clouds
-- Last updated: 2025-05-23T17:22:48.177403
+- Description: Scattered clouds
+- Last updated: 2025-05-23T18:33:27.209308
 
 <!-- WEATHER-END -->
 
