@@ -201,10 +201,7 @@ def update_readme():
 - Rain: {rain} mm
 - Description: {description.capitalize()}
 - last updated: {datetime.datetime.now}
-""")
-
-def dynamic_location():
-    
+""")    
 
 # define a main
 def main():
