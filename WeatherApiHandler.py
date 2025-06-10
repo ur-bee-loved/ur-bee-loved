@@ -7,7 +7,6 @@ import math
 ##import numpy as np
 from dotenv import load_dotenv
 load_dotenv()
-import re 
 
 ##Define as configurações da API
    ##Estudar fazer um .env com a chave da API visando escalonamento e segurança.
@@ -189,40 +188,25 @@ def update_readme():
     cursor.execute('SELECT * FROM weather ORDER BY id DESC LIMIT 1')
     row = cursor.fetchone()
 
-    if not row:
-        return
+    if row:
+        city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
 
-    city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
-
-    # Read the full README
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
-
-    # New weather block
-    weather_block = f"""\
-### ☁️ Weather in {city}
+        with open("TESTE.md", "w", encoding="utf-8") as f:
+            f.write(f"""\
+### ☁️ 🌤️  The weather in {city} is: {city}
 
 - Temperature: {temp}°C
-- Feels like: {feels_like}°C
-- Humidity: {humidity}%
+- On flesh: {feels_like}°C
+- Relative air humidity: {humidity}%
 - Rain: {rain} mm
 - Description: {description.capitalize()}
-- Last updated: {timestamp}
-"""
+- last updated: {datetime.datetime.now}
+""")
 
-    # Replace the section
-    new_content = re.sub(
-        r"<!-- WEATHER-START -->(.*?)<!-- WEATHER-END -->",
-        f"<!-- WEATHER-START -->\n{weather_block}\n<!-- WEATHER-END -->",
-        content,
-        flags=re.DOTALL
-    )
+def dynamic_location():
+    
 
-    # Write back to README
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(new_content)
-
-# bota pa fude
+# define a main
 def main():
     if not init_database():
         print("Couldn't initialize databank.")
@@ -230,14 +214,14 @@ def main():
     
     try:
         ##city = input("What city are we scanning today?: ")
-        city = str("florianópolis")
+        city = str("florianopolis")
         get_weather(city)
     except Exception as e:
         print(f"Error executing program: {e}")
         import traceback
         traceback.print_exc()
 
-# entrada do programa
+# bota pa fude
 if __name__ == "__main__":
     main()
     update_readme()
