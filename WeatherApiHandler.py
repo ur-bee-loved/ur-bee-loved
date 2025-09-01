@@ -12,7 +12,6 @@ load_dotenv()
    ##Estudar fazer um .env com a chave da API visando escalonamento e segurança.
 API_KEY = ("abee1e9bb3c878b655410c5ac7564ecb")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
-CALLS_LOG = "api_calls.json"
 DAILY_LIMIT = 950
 DB_PATH = 'weather_data.db'
 
@@ -61,29 +60,6 @@ def init_database():
 
 
 #Toda arquitetura do arquivo JSON é para garantir que não ocorram chamadas demais na API, visando evitar o pagamento de taxas extras.
-def load_api_log():
-    if not os.path.exists(CALLS_LOG):
-        return {}
-    with open(CALLS_LOG, 'r') as f:
-        return json.load(f)
-
-def save_api_log(log):
-    with open(CALLS_LOG, 'w') as f:
-        json.dump(log, f)
-
-def can_make_api_call():
-    log = load_api_log()
-    today = datetime.date.today().isoformat()
-
-    if today not in log:
-        log[today] = 0
-
-    if log[today] >= DAILY_LIMIT:
-        return False, log
-    else:
-        log[today] += 1
-        save_api_log(log)
-        return True, log
 
 # Salvar no banco
 def save_weather_to_db(weather_data):
@@ -118,10 +94,7 @@ def save_weather_to_db(weather_data):
 
 # Pega o clima
 def get_weather(city_name):
-    allowed, log = can_make_api_call()
-    if not allowed:
-        print("⚠️ Resquest threshold reached. Why are you abusing my little infrastructure?")
-        return
+   can_make_api_call()
 
     params = {
         'q': city_name,
@@ -222,3 +195,4 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
