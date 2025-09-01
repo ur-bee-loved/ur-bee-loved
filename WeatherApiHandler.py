@@ -129,7 +129,6 @@ def get_weather(city_name):
         ## print(f"Ponto de orvalho: {dew:.2f}°C")
         print(f"Description: {desc.capitalize()}")
         print(f"is_rain == true?: {rain}mm. {rain_mood}")
-        print(f"API requests today: {log[datetime.date.today().isoformat()]}/{DAILY_LIMIT}")
 
         # Salvar no banco
         weather_data = {
@@ -192,6 +191,7 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
 
 
 
