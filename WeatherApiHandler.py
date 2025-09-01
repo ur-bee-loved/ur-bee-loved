@@ -101,8 +101,7 @@ def get_weather(city_name):
         'units': 'metric',
         'lang': 'en'
     }
-
-    try:
+   try:
         response = requests.get(BASE_URL, params=params)
         response.raise_for_status()
 
@@ -144,11 +143,11 @@ def get_weather(city_name):
         }
         save_weather_to_db(weather_data)
 
-    except requests.exceptions.RequestException as e:
+   except requests.exceptions.RequestException as e:
         print("❌ Network error:", e)
-    except KeyError:
+   except KeyError:
         print("❌ Couldn't locate this city or JSON format error.")
-    except Exception as e:
+   except Exception as e:
         print("❌ 404", e)
         
 def update_readme():
