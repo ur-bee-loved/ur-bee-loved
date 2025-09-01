@@ -160,7 +160,7 @@ def update_readme():
     if row:
         city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
 
-        with open("TESTE.md", "w", encoding="utf-8") as f:
+        with open("README.md", "w", encoding="utf-8") as f:
             f.write(f"""\
 ### ☁️ 🌤️  The weather in {city} is: {city}
 
@@ -191,6 +191,7 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
 
 
 
