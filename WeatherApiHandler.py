@@ -73,7 +73,7 @@ def save_api_log(log):
 
 def can_make_api_call():
     log = load_api_log()
-    today = datetime.date.today().isoformat()
+    today = datetime.date.today()
 
     if today not in log:
         log[today] = 0
@@ -94,7 +94,7 @@ def save_weather_to_db(weather_data):
             return False
         
         cursor = conn.cursor()
-        now = datetime.datetime.now().isoformat()
+        now = datetime.datetime.now()
         
         cursor.execute('''
         INSERT INTO weather (city, temperature, feels_like, humidity, rain, description, timestamp)
@@ -159,7 +159,7 @@ def get_weather(city_name):
         ## print(f"Ponto de orvalho: {dew:.2f}°C")
         print(f"Description: {desc.capitalize()}")
         print(f"is_rain == true?: {rain}mm. {rain_mood}")
-        print(f"API requests today: {log[datetime.date.today().isoformat()]}/{DAILY_LIMIT}")
+        print(f"API requests today: {log[datetime.date.today()]}/{DAILY_LIMIT}")
 
         # Salvar no banco
         weather_data = {
@@ -222,3 +222,4 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
