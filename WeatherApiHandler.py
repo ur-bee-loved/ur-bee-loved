@@ -12,6 +12,7 @@ load_dotenv()
    ##Estudar fazer um .env com a chave da API visando escalonamento e segurança.
 API_KEY = ("abee1e9bb3c878b655410c5ac7564ecb")
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+CALLS_LOG = "api_calls.json"
 DAILY_LIMIT = 950
 DB_PATH = 'weather_data.db'
 
@@ -60,6 +61,29 @@ def init_database():
 
 
 #Toda arquitetura do arquivo JSON é para garantir que não ocorram chamadas demais na API, visando evitar o pagamento de taxas extras.
+def load_api_log():
+    if not os.path.exists(CALLS_LOG):
+        return {}
+    with open(CALLS_LOG, 'r') as f:
+        return json.load(f)
+
+def save_api_log(log):
+    with open(CALLS_LOG, 'w') as f:
+        json.dump(log, f)
+
+def can_make_api_call():
+    log = load_api_log()
+    today = datetime.date.today().isoformat()
+
+    if today not in log:
+        log[today] = 0
+
+    if log[today] >= DAILY_LIMIT:
+        return False, log
+    else:
+        log[today] += 1
+        save_api_log(log)
+        return True, log
 
 # Salvar no banco
 def save_weather_to_db(weather_data):
@@ -94,13 +118,19 @@ def save_weather_to_db(weather_data):
 
 # Pega o clima
 def get_weather(city_name):
-   params = {
+    allowed, log = can_make_api_call()
+    if not allowed:
+        print("⚠️ Resquest threshold reached. Why are you abusing my little infrastructure?")
+        return
+
+    params = {
         'q': city_name,
         'appid': API_KEY,
         'units': 'metric',
         'lang': 'en'
     }
-   try:
+
+    try:
         response = requests.get(BASE_URL, params=params)
         response.raise_for_status()
 
@@ -129,6 +159,7 @@ def get_weather(city_name):
         ## print(f"Ponto de orvalho: {dew:.2f}°C")
         print(f"Description: {desc.capitalize()}")
         print(f"is_rain == true?: {rain}mm. {rain_mood}")
+        print(f"API requests today: {log[datetime.date.today().isoformat()]}/{DAILY_LIMIT}")
 
         # Salvar no banco
         weather_data = {
@@ -141,11 +172,11 @@ def get_weather(city_name):
         }
         save_weather_to_db(weather_data)
 
-   except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException as e:
         print("❌ Network error:", e)
-   except KeyError:
+    except KeyError:
         print("❌ Couldn't locate this city or JSON format error.")
-   except Exception as e:
+    except Exception as e:
         print("❌ 404", e)
         
 def update_readme():
@@ -160,7 +191,7 @@ def update_readme():
     if row:
         city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
 
-        with open("README.md", "w", encoding="utf-8") as f:
+        with open("TESTE.md", "w", encoding="utf-8") as f:
             f.write(f"""\
 ### ☁️ 🌤️  The weather in {city} is: {city}
 
@@ -169,10 +200,10 @@ def update_readme():
 - Relative air humidity: {humidity}%
 - Rain: {rain} mm
 - Description: {description.capitalize()}
-- last updated: {datetime.datetime.now}
-""")    
+- last updated: {timestamp}
+""")
 
-# define a main
+# bota pa fude
 def main():
     if not init_database():
         print("Couldn't initialize databank.")
@@ -187,12 +218,7 @@ def main():
         import traceback
         traceback.print_exc()
 
-# bota pa fude
+# entrada do programa
 if __name__ == "__main__":
     main()
     update_readme()
-
-
-
-
-
