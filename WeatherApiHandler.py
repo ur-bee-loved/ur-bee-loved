@@ -94,7 +94,7 @@ def save_weather_to_db(weather_data):
             return False
         
         cursor = conn.cursor()
-        now = datetime.datetime.now()
+        now = datetime.datetime.now(tz = -3)
         
         cursor.execute('''
         INSERT INTO weather (city, temperature, feels_like, humidity, rain, description, timestamp)
@@ -222,4 +222,5 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
 
