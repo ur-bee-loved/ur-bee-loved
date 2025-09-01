@@ -200,7 +200,7 @@ def update_readme():
 - Relative air humidity: {humidity}%
 - Rain: {rain} mm
 - Description: {description.capitalize()}
-- last updated: {datetime.datetime.now(tz -3)}
+- last updated: {datetime.datetime.now(timezone.utc)}
 """)    
 
 # define a main
@@ -222,6 +222,7 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
 
 
 
