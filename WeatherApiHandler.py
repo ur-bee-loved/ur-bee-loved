@@ -94,7 +94,6 @@ def save_weather_to_db(weather_data):
 
 # Pega o clima
 def get_weather(city_name):
-   can_make_api_call()
    params = {
         'q': city_name,
         'appid': API_KEY,
@@ -193,5 +192,6 @@ def main():
 if __name__ == "__main__":
     main()
     update_readme()
+
 
 
