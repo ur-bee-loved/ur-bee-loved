@@ -47,6 +47,7 @@ def init_database():
                 humidity INTEGER,
                 rain REAL,
                 description TEXT,
+                rain_mood TEXT,
                 timestamp TEXT
             )
             ''')
