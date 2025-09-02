@@ -168,7 +168,8 @@ def get_weather(city_name):
             'feels_like': feels,
             'humidity': humidity,
             'rain': rain,
-            'description': desc
+            'description': desc,
+            'rain_mood' : rain_mood
         }
         save_weather_to_db(weather_data)
 
@@ -189,17 +190,15 @@ def update_readme():
     row = cursor.fetchone()
 
     if row:
-        city, temp, feels_like, humidity, rain, description, timestamp = row[1:]
+        city, temp, feels_like, humidity, rain, description, rain_mood, timestamp = row[1:]
 
         with open("README.md", "w", encoding="utf-8") as f:
             f.write(f"""\
-### ☁️ 🌤️  The weather in {city} is: {city}
+### ☁️ 🌤️  The weather in {city} is: {description.capitalize()}
 
-- Temperature: {temp}°C
-- On flesh: {feels_like}°C
+- Temperature: {temp}°C (Around {feels_like}°C on flesh)
 - Relative air humidity: {humidity}%
-- Rain: {rain} mm
-- Description: {description.capitalize()}
+- is_rain == true?: {rain}mm. {rain_mood}
 - last updated: {timestamp}
 """)
 
