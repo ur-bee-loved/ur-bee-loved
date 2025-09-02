@@ -98,7 +98,7 @@ def save_weather_to_db(weather_data):
         now = datetime.datetime.now().isoformat()
         
         cursor.execute('''
-        INSERT INTO weather (city, temperature, feels_like, humidity, rain, description, timestamp)
+        INSERT INTO weather (city, temperature, feels_like, humidity, rain, description, rain_mood, timestamp)
         VALUES (?, ?, ?, ?, ?, ?, ?)
         ''', (
             weather_data['city'],
@@ -107,6 +107,7 @@ def save_weather_to_db(weather_data):
             weather_data['humidity'],
             weather_data['rain'],
             weather_data['description'],
+            weather_data['rain_mood'],
             now
         ))
         conn.commit()
