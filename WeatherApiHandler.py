@@ -4,14 +4,15 @@ import os
 import json
 import sqlite3
 import math
+import sys
 ##import numpy as np
 from dotenv import load_dotenv
 load_dotenv()
 
 ##Define as configurações da API
-   ##Estudar fazer um .env com a chave da API visando escalonamento e segurança.
-API_KEY = ("abee1e9bb3c878b655410c5ac7564ecb")
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+##A chave vem do ambiente: secret do GitHub Actions no CI, ou um arquivo .env local (fora do git).
+API_KEY = os.getenv("WEATHER_API_KEY") or os.getenv("API_KEY")
+BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 CALLS_LOG = "api_calls.json"
 DAILY_LIMIT = 950
 DB_PATH = 'weather_data.db'
@@ -99,7 +100,7 @@ def save_weather_to_db(weather_data):
         
         cursor.execute('''
         INSERT INTO weather (city, temperature, feels_like, humidity, rain, description, rain_mood, timestamp)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             weather_data['city'],
             weather_data['temp'],
@@ -123,7 +124,7 @@ def get_weather(city_name):
     allowed, log = can_make_api_call()
     if not allowed:
         print("⚠️ Resquest threshold reached. Why are you abusing my little infrastructure?")
-        return
+        return False
 
     params = {
         'q': city_name,
@@ -173,7 +174,7 @@ def get_weather(city_name):
             'description': desc,
             'rain_mood' : rain_mood
         }
-        save_weather_to_db(weather_data)
+        return save_weather_to_db(weather_data)
 
     except requests.exceptions.RequestException as e:
         print("❌ Network error:", e)
@@ -181,21 +182,26 @@ def get_weather(city_name):
         print("❌ Couldn't locate this city or JSON format error.")
     except Exception as e:
         print("❌ 404", e)
-        
+    return False
+
 def update_readme():
     conn = get_db_connection()
     if conn is None:
         print("Couldn't connect to the database.")
-        return
+        return False
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM weather ORDER BY id DESC LIMIT 1')
     row = cursor.fetchone()
+    conn.close()
 
-    if row:
-        city, temp, feels_like, humidity, rain, description, rain_mood, timestamp = row[1:]
+    if not row:
+        print("❌ No weather data in the database, README not updated.")
+        return False
 
-        with open("README.md", "w", encoding="utf-8") as f:
-            f.write(f"""\
+    city, temp, feels_like, humidity, rain, description, rain_mood, timestamp = row[1:]
+
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(f"""\
 ### ☁️ 🌤️  The weather in {city} is: {description.capitalize()}
 
 - Temperature: {temp}°C (Around {feels_like}°C on flesh)
@@ -203,23 +209,30 @@ def update_readme():
 - is_rain == true?: {rain}mm. {rain_mood}
 - last updated: {timestamp}
 """)
+    return True
 
 # bota pa fude
 def main():
+    if not API_KEY:
+        print("❌ WEATHER_API_KEY is not set (GitHub secret or local .env).")
+        return False
+
     if not init_database():
         print("Couldn't initialize databank.")
-        return
-    
+        return False
+
     try:
         ##city = input("What city are we scanning today?: ")
         city = str("florianopolis")
-        get_weather(city)
+        return get_weather(city)
     except Exception as e:
         print(f"Error executing program: {e}")
         import traceback
         traceback.print_exc()
+        return False
 
 # entrada do programa
+# Sai com código 1 se algo falhar, pra o GitHub Actions marcar o run em vermelho.
 if __name__ == "__main__":
-    main()
-    update_readme()
+    ok = main() and update_readme()
+    sys.exit(0 if ok else 1)
