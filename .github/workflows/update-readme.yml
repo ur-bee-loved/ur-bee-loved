@@ -30,8 +30,7 @@ jobs:
       - name: Run weather update script
         run: python WeatherApiHandler.py
         env:
-          WEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
-          API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}  # backup
+          WEATHER_API_KEY: ${{ secrets.API_KEY }}
 
       - name: Configure Git
         run: |
